@@ -10,6 +10,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import pandas as pd
 import logging
 from llm_query import query_llm
+import zipfile
 
 # Download necessary NLTK resources
 nltk.download('punkt')
@@ -72,7 +73,10 @@ def load_model():
     
     try:
         # Load the random forest model and emotion categories
-        best_model = joblib.load('./model/rf_best.joblib')
+        with zipfile.ZipFile('rf_best.zip', 'r') as zf:
+            with zf.open('rf_best.joblib') as f:
+                best_model = joblib.load(f)
+        print("Model loaded successfully.")
         with open('./resources/categories_best.json', 'r') as json_file:
             categories = json.load(json_file)
         
