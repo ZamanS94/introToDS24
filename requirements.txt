@@ -106,8 +106,7 @@ sympy==1.13.3
 tensorboard==2.15.2
 tensorboard-data-server==0.7.2
 tensorflow==2.15.0
-tensorflow-estimator==2.15.0
-tensorflow-intel==2.15.0
+tensorflow-estimator==2.15.0  # Ensure compatibility
 tensorflow-io-gcs-filesystem==0.31.0
 termcolor==2.4.0
 threadpoolctl==3.5.0
@@ -123,4 +122,4 @@ vectorizer==0.3.0
 virtualenv==20.16.7
 Werkzeug==3.0.4
 wrapt==1.14.1
-pip==24.2  # Added pip version
+pip==24.2  # Ensure pip is the latest version
